@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
+use Illuminate\Http\Request;
+
 class HomeController extends Controller
 {
     /**
@@ -21,13 +24,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $data['products'] = Product::orderBy('id','desc')->get();
+        return view('home')->with($data);
     }
 
 
-    public function product()
+    public function product(Request $request)
     {
-        return view('product');
+        $data['product'] = Product::where('product_slug', $request->slug)->first();
+        return view('product')->with($data);
     }
 
 

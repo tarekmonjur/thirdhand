@@ -11,6 +11,8 @@
                         <a href="{{ route('register') }}">Register</a>
                     @else
                         @if(Auth::user()->type == 'admin')
+                            <a href="{{ url('product-add') }}">Add Product</a>
+                            <a href="{{ url('products') }}">Products</a>
                             <a href="{{ url('customers') }}">Customers</a>
                         @endif
                         <a href="{{ url('devices') }}">Device</a>

@@ -68,66 +68,18 @@
                 </div>
                 <div class="text-center product clearfix">
                     <div class="row">
+                        @foreach($products as $product)
                         <div class="col-sm-6 col-md-4">
                             <div class="product-col">
                                 <div class="product-img">
-                                    <img alt="" src="image/watch2.png">
+                                    <img alt="" src="{{asset('uploads/products/'.$product->product_image)}}">
                                 </div>
-                                <h6 class="fw-600">Digital watch</h6>
-                                <div class="price">$59.99</div>
-                                <a class="btn" href="{{url('/products/1')}}">View details</a>
+                                <h6 class="fw-600">{{$product->product_name}}</h6>
+                                <div class="price">${{$product->product_price}}</div>
+                                <a class="btn" href="{{url('/product/'.$product->product_slug)}}">View details</a>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="product-col">
-                                <div class="product-img">
-                                    <img alt="" src="image/watch3.png">
-                                </div>
-                                <h6 class="fw-600">Digital watch</h6>
-                                <div class="price">$42.99</div>
-                                <a class="btn" href="{{url('/products/1')}}">View details</a>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="product-col">
-                                <div class="product-img">
-                                    <img alt="" src="image/watch1.png">
-                                </div>
-                                <h6 class="fw-600">Digital watch</h6>
-                                <div class="price">$19.99</div>
-                                <a class="btn" href="single.html">View details</a>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="product-col">
-                                <div class="product-img">
-                                    <img alt="" src="image/watch1.png">
-                                </div>
-                                <h6 class="fw-600">Digital watch</h6>
-                                <div class="price">$19.99</div>
-                                <a class="btn" href="single.html">View details</a>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="product-col">
-                                <div class="product-img">
-                                    <img alt="" src="image/watch2.png">
-                                </div>
-                                <h6 class="fw-600">Digital watch</h6>
-                                <div class="price">$19.99</div>
-                                <a class="btn" href="single.html">View details</a>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="product-col">
-                                <div class="product-img">
-                                    <img alt="" src="image/watch3.png">
-                                </div>
-                                <h6 class="fw-600">Digital watch</h6>
-                                <div class="price">$19.99</div>
-                                <a class="btn" href="single.html">View details</a>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

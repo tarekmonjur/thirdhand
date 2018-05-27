@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'HomeController@index');
+Route::get('/home', 'HomeController@index');
 Route::get('/product', 'HomeController@index');
 Route::get('/product/{slug}', 'HomeController@product');
 
@@ -33,7 +34,7 @@ Route::get('/products', 'ProductController@showProduct');
 Route::get('/product-add', 'ProductController@addProduct');
 Route::post('/product-store', 'ProductController@storeProduct');
 Route::get('/product-edit/{id}', 'ProductController@editProduct');
-Route::put('/product-update/{id}', 'ProductController@updaetProduct');
+Route::post('/product-edit/{id}', 'ProductController@updaetProduct');
 Route::get('/product-delete/{id}', 'ProductController@deleteProduct');
 
 
